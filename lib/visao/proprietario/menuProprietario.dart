@@ -1,23 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tel/visao/cadGasto.dart';
-import 'package:tel/visao/cadReceita.dart';
-import 'package:tel/visao/cadTipoGasto.dart';
-import 'package:tel/visao/cadTipoReceita.dart';
-import 'package:tel/visao/principal.dart';
-import 'package:tel/visao/relatorios.dart';
+import 'package:for_food/visao/proprietario/pedidosProprietario.dart';
+import 'package:for_food/visao/proprietario/minhaContaProprietario.dart';
+import 'package:for_food/visao/proprietario/principalProprietario.dart';
+import 'package:for_food/visao/proprietario/estoqueProprietario.dart';
 
 //indice de seleção da tela
 int _selectedIndex = 0;
 
 //vetor de telas a serem utilizadas
 List<Widget> _stOptions = <Widget>[
-  Principal(),
-  CadReceita(),
-  CadGasto(),
-  CadTipoReceita(),
-  CadTipoGasto(),
-  Relatorios(),
+  PrincipalProprietario(),
+  PedidosProprietario(),
+  EstoqueProprietario(),
+  MinhaContaProprietario(),
 ];
 
 class Navegar extends StatefulWidget {
@@ -44,7 +40,7 @@ class _NavegarState extends State<Navegar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Fluxo"),
+        title: Text("For Food"),
         backgroundColor: Colors.blue,
       ),
 
@@ -60,23 +56,15 @@ class _NavegarState extends State<Navegar> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.attach_money),
-            label: 'Receitas',
+            label: 'Pedidos Recebidos',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.money_off),
-            label: 'Gastos',
+            label: 'Estoque/Cardapio',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.attach_money),
-            label: 'Tipos Receitas',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.money_off),
-            label: 'Tipo Gastos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'Relatorios',
+            label: 'Minha Conta',
           ),
         ],
 

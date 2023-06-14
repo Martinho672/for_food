@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tel/visao/menu.dart';
+import 'package:for_food/visao/cliente/menuCliente.dart';
+//import 'package:for_food/visao/proprietario/menuProprietario.dart';
 
 class Splash extends StatefulWidget {
   @override

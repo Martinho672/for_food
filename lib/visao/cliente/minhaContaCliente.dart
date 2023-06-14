@@ -1,18 +1,16 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Relatorios extends StatefulWidget {
-
+class MinhaContaCliente extends StatefulWidget {
   @override
-  _RelatoriosState createState() => _RelatoriosState();
+  _MinhaContaClienteState createState() => _MinhaContaClienteState();
 }
 
-class _RelatoriosState extends State<Relatorios> {
+class _MinhaContaClienteState extends State<MinhaContaCliente> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Relatórios"),
+        title: Text("Minha Conta"),
         backgroundColor: Colors.blueGrey,
       ),
     );

@@ -1,18 +1,16 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CadTipoReceita extends StatefulWidget {
-
+class PrincipalProprietario extends StatefulWidget {
   @override
-  _CadTipoReceitaState createState() => _CadTipoReceitaState();
+  _PrincipalProprietarioState createState() => _PrincipalProprietarioState();
 }
 
-class _CadTipoReceitaState extends State<CadTipoReceita> {
+class _PrincipalProprietarioState extends State<PrincipalProprietario> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tipo Receita"),
+        title: Text("Principal"),
         backgroundColor: Colors.blueGrey,
       ),
     );

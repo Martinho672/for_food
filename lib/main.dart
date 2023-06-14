@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tel/splash.dart';
+import 'package:for_food/splash.dart';
 
 void main() {
   // it should be the first line in main method
