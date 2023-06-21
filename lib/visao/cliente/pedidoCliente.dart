@@ -11,10 +11,20 @@ class _PedidoClienteState extends State<PedidoCliente> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Pedidos do Cliente Atual"),
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.purple,
       ),
-      body: Center(
-        child: Text("Sua mãe é a melhor!!!"),
+      body: Container(
+        color: Colors.white,
+        child: Center(
+          child: Text(
+            "Sua mãe é a melhor!!!",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+        ),
       ),
     );
   }

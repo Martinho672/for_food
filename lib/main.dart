@@ -8,7 +8,7 @@ void main() {
 
 
   runApp(MaterialApp(
-      title: "Fluxo Caixa",
+      title: "FOR FOOD",
       home: Splash()
   ));
 

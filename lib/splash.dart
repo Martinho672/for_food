@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:for_food/visao/cliente/menuCliente.dart';
-//import 'package:for_food/visao/proprietario/menuProprietario.dart';
+import 'package:for_food/visao/login.dart';
 
 class Splash extends StatefulWidget {
   @override
@@ -9,26 +7,38 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-
   @override
   void initState() {
     super.initState();
 
-    //espera 3 segundos do splash
+    // Espera 3 segundos do splash
     Future.delayed(Duration(seconds: 3)).then((_) {
-      //muda para a proxima tela
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Navegar(0)));
+      // Muda para a próxima tela (Login)
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Login()),
+      );
     });
   }
 
-
-  //constroe a tela do splash
+  // Constrói a tela do splash
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
+      color: Colors.purple,
       alignment: Alignment.center,
-      child: Center(
-        child: CircularProgressIndicator(color: Colors.white,),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.network(
+            'https://w7.pngwing.com/pngs/971/466/png-transparent-breakfast-lunch-dinner-meal-breakfast-food-logo-eating-thumbnail.png', // URL para o logotipo online
+            width: 200,
+            height: 200,
+          ),
+          SizedBox(height: 16),
+          CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+          ),
+        ],
       ),
     );
   }
