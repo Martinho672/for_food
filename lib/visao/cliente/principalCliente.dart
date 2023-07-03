@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../widgets/customcard.dart';
 
 class PrincipalCliente extends StatefulWidget {
   @override
@@ -9,22 +10,30 @@ class PrincipalCliente extends StatefulWidget {
 class _PrincipalClienteState extends State<PrincipalCliente> {
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(""),
-        backgroundColor: Colors.purple,
-      ),
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Text(
-            "Bem-vindo à tela Principal!",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
+      backgroundColor: Colors.orange,
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.only(top: 100),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Expanded(
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: const [
+                CustomCard(),
+                CustomCard(),
+                CustomCard(),
+                CustomCard(),
+              ],
             ),
           ),
-        ),
+          const SizedBox(
+            height: 50,
+          )
+        ],
       ),
     );
   }

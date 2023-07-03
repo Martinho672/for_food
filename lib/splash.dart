@@ -31,11 +31,10 @@ class _SplashState extends State<Splash> {
         children: [
           Image.network(
             'https://w7.pngwing.com/pngs/971/466/png-transparent-breakfast-lunch-dinner-meal-breakfast-food-logo-eating-thumbnail.png', // URL para o logotipo online
-            width: 200,
-            height: 200,
+            scale: 1 / 2,
           ),
-          SizedBox(height: 16),
-          CircularProgressIndicator(
+          const SizedBox(height: 16),
+          const CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
           ),
         ],

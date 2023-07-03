@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:for_food/visao/cliente/pedidoCliente.dart';
 import 'package:for_food/visao/cliente/minhaContaCliente.dart';
@@ -45,10 +44,10 @@ class _MenuClienteState extends State<MenuCliente> {
               right: 0,
               child: AnimatedOpacity(
                 opacity: _selectedIndex == 0 ? 1.0 : 0.0,
-                duration: Duration(milliseconds: 200),
+                duration: const Duration(milliseconds: 200),
                 child: AppBar(
-                  title: Text("For Food"),
-                  backgroundColor: Colors.purple,
+                  title: const Text("Cardapio"),
+                  backgroundColor: Colors.orangeAccent,
                 ),
               ),
             ),
@@ -62,11 +61,11 @@ class _MenuClienteState extends State<MenuCliente> {
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
                       icon: Icon(Icons.home),
-                      label: 'Principal',
+                      label: 'Cardapio',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.attach_money),
-                      label: 'Pedidos',
+                      label: 'Meus pedidos',
                     ),
                     BottomNavigationBarItem(
                       icon: Icon(Icons.money_off),
@@ -76,7 +75,7 @@ class _MenuClienteState extends State<MenuCliente> {
                   unselectedItemColor: Colors.white,
                   currentIndex: _selectedIndex,
                   selectedItemColor: Colors.white,
-                  backgroundColor: Colors.purple,
+                  backgroundColor: Colors.orangeAccent,
                   onTap: _onItemTapped,
                 ),
               ),
