@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:for_food/visao/cadastro.dart';
 import 'package:for_food/visao/proprietario/menuProprietario.dart';
 import 'package:for_food/visao/cliente/menuCliente.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../util.dart';
 
@@ -21,7 +22,7 @@ class _LoginState extends State<Login> {
     String senha = _senhaController.text;
 
     try {
-      // Consulta ao Firestore para obter o usuário com o e-mail fornecido
+      // Consulta ao Firestore para obter o usuário com o nome fornecido
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
           .collection('usuarios')
           .where('nome', isEqualTo: login)
@@ -30,13 +31,20 @@ class _LoginState extends State<Login> {
       if (querySnapshot.docs.isNotEmpty) {
         // Obtém os dados do login
         String login = querySnapshot.docs[0].get('nome');
+        String senhaArmazenada = querySnapshot.docs[0].get('password');
+        String tipoUsuario = querySnapshot.docs[0].get('tipo');
+        String userId = querySnapshot.docs[0].id;
+        print(userId);
         // Exibe o login do usuário
         print('Login do usuário: $login');
-        String senhaArmazenada = querySnapshot.docs[0].get('password');
+
         if (senha == senhaArmazenada) {
           if (!context.mounted) return;
           // Verifica o tipo do usuario e armazena o ID do usuario localmente
-          String tipoUsuario = querySnapshot.docs[0].get('tipo');
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          prefs.setString('usuarioId', userId);
+          prefs.setString('nomeUsuario', login);
+
           if (tipoUsuario == 'cliente') {
             Util().showBar(context, 'Login realizado com sucesso!');
             Navigator.pushReplacement(
@@ -54,7 +62,6 @@ class _LoginState extends State<Login> {
           Util().showBar(context, 'Senhar ou Usuario incorreto');
         }
       } else {
-        // Usuário não encontrado
         Util().showBar(context, 'Usuário não encontrado. Tente novamente.');
       }
     } catch (e) {
@@ -122,10 +129,11 @@ class _LoginState extends State<Login> {
                   TextButton(
                     child: const Text('Cadastre-se'),
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CadastroUsuarioPage()),
+                          builder: (context) => const CadastroUsuarioPage(),
+                        ),
                       );
                     },
                   ),
