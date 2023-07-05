@@ -19,7 +19,7 @@ class _MinhaContaClienteState extends State<MinhaContaCliente> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Minha Conta"),
-        backgroundColor: Colors.purple, // Altera a cor da AppBar para roxo
+        backgroundColor: Colors.lightBlueAccent, // Altera a cor da AppBar para roxo
       ),
       body: Center(
         child: Column(

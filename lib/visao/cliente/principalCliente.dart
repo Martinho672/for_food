@@ -49,7 +49,7 @@ class _PrincipalClienteState extends State<PrincipalCliente> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.lightBlueAccent,
       body: Column(
         children: [
           Container(

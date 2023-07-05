@@ -20,8 +20,7 @@ class _PedidosProprietarioState extends State<PedidosProprietario> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Pedidos"),
-        backgroundColor: Colors.deepPurple[
-            800], // Define a cor roxa mais escura para a barra superior
+        backgroundColor: Colors.blue,
       ),
       body: ListView(
         children: [

@@ -73,7 +73,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrangeAccent,
+      backgroundColor: Colors.blue,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -120,6 +120,10 @@ class _LoginState extends State<Login> {
               TextButton(
                 onPressed: _fazerLogin,
                 child: const Text('Entrar'),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                ),
+
               ),
               const SizedBox(height: 8),
               Row(

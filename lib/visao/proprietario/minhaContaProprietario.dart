@@ -19,8 +19,7 @@ class _MinhaContaProprietarioState extends State<MinhaContaProprietario> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Minha Conta Proprietario"),
-        backgroundColor: Colors.deepPurple[
-        800], // Define a cor roxa mais escura para a barra superior
+        backgroundColor: Colors.blue, // Define a cor roxa mais escura para a barra superior
       ),
       body: Center(
         child: Column(

@@ -37,48 +37,65 @@ class _MenuProprietarioState extends State<MenuProprietario> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // Permite que o corpo da tela se estenda atrás da barra superior
-      appBar: _selectedIndex != null
-          ? null
-          : AppBar(
-        backgroundColor: Colors.white, // Define a cor da barra superior como branca
-        elevation: 0, // Remove a sombra da barra superior
-      ),
+      body: Container(
+        color: Colors.white,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: IndexedStack(
+                index: _selectedIndex,
+                children: _stOptions,
+              ),
+            ),
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: AnimatedOpacity(
+                opacity: _selectedIndex == 0 ? 1.0 : 0.0,
+                duration: Duration(milliseconds: 200),
+                child: AppBar(
+                  title: Text("For Food"),
+                  backgroundColor: Colors.blue,
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: Container(
+                color: Colors.blue,
+                child: BottomNavigationBar(
 
-      // Corpo da aplicação, aqui são setadas as telas
-      body: Stack(
-        children: [
-          Container(
-            color: Colors.white, // Define o fundo do corpo como branco
-          ),
-          _stOptions.elementAt(_selectedIndex),
-        ],
-      ),
-
-      // Botões do BottomNavigationBar
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Principal',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'Pedidos Recebidos',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.money_off),
-            label: 'Estoque/Cardápio',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money),
-            label: 'Minha Conta',
-          ),
-        ],
-        unselectedItemColor: Colors.grey,
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.orange,
-        onTap: _onItemTapped,
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'Principal',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.attach_money),
+                      label: 'Pedidos Recebidos',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.add_shopping_cart),
+                      label: 'Estoque/Cardapio',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.money_off),
+                      label: 'Minha Conta',
+                    ),
+                  ],
+                  backgroundColor: Colors.blue,
+                  unselectedItemColor:  Colors.blue,
+                  currentIndex: _selectedIndex,
+                  selectedItemColor:  Colors.blue,
+                  onTap: _onItemTapped,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

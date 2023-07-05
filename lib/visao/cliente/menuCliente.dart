@@ -47,7 +47,7 @@ class _MenuClienteState extends State<MenuCliente> {
                 duration: const Duration(milliseconds: 200),
                 child: AppBar(
                   title: const Text("Cardapio"),
-                  backgroundColor: Colors.orangeAccent,
+                  backgroundColor: Colors.lightBlueAccent,
                 ),
               ),
             ),
@@ -56,7 +56,7 @@ class _MenuClienteState extends State<MenuCliente> {
               left: 0,
               right: 0,
               child: Container(
-                color: Colors.purple,
+                color: Colors.lightBlueAccent,
                 child: BottomNavigationBar(
                   items: const <BottomNavigationBarItem>[
                     BottomNavigationBarItem(
@@ -75,7 +75,7 @@ class _MenuClienteState extends State<MenuCliente> {
                   unselectedItemColor: Colors.white,
                   currentIndex: _selectedIndex,
                   selectedItemColor: Colors.white,
-                  backgroundColor: Colors.orangeAccent,
+                  backgroundColor: Colors.lightBlueAccent,
                   onTap: _onItemTapped,
                 ),
               ),

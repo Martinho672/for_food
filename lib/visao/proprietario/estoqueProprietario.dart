@@ -12,7 +12,7 @@ class _EstoqueProprietarioState extends State<EstoqueProprietario> {
       extendBodyBehindAppBar: true, // Permite que o corpo da tela se estenda atrás da barra superior
       appBar: AppBar(
         title: Text("Estoque de produtos e cardápio"),
-        backgroundColor: Colors.deepPurple[800], // Define a cor roxa mais escura para a barra superior
+        backgroundColor: Colors.blue, // Define a cor roxa mais escura para a barra superior
         elevation: 0, // Remove a sombra da barra superior
       ),
       body: Center(

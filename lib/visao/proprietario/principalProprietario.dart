@@ -10,8 +10,8 @@ class _PrincipalProprietarioState extends State<PrincipalProprietario> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Principal"),
-        backgroundColor: Colors.deepPurple[800], // Define a cor roxa mais escura para a barra superior
+        title: Text(""),
+        backgroundColor: Colors.blue, // Define a cor roxa mais escura para a barra superior
       ),
     );
   }

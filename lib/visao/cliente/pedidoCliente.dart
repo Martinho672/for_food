@@ -27,7 +27,7 @@ class _PedidoClienteState extends State<PedidoCliente> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.lightBlueAccent,
       body: Column(
         children: [
           Container(

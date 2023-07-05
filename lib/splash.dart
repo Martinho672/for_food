@@ -24,7 +24,7 @@ class _SplashState extends State<Splash> {
   // Constrói a tela do splash
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.purple,
+      color: Colors.blue,
       alignment: Alignment.center,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
