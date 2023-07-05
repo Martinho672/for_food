@@ -12,7 +12,6 @@ class UsuarioModelo {
   });
 
   toJson() => {
-        'usuarioId': id,
         'nome': nome,
         'senha': senha,
         'tipo': tipoUsuario,

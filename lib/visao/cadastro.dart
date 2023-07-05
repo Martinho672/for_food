@@ -80,9 +80,10 @@ class _CadastroUsuarioPageState extends State<CadastroUsuarioPage> {
     final documento = db.collection('usuarios').doc();
 
     UsuarioModelo usuario = UsuarioModelo(
-        nome: nome.toString(),
-        senha: senha.toString(),
-        tipoUsuario: tipoUsuario);
+      nome: nome.toString(),
+      senha: senha.toString(),
+      tipoUsuario: tipoUsuario.toString(),
+    );
 
     await documento.set(usuario.toJson()).then((value) => log("Cadastrou!"),
         onError: (e) => log("Deu ruim: $e"));
